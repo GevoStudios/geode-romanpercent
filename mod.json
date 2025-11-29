@@ -8,7 +8,7 @@
 	},
 	"id": "beat.roman_percent",
 	"name": "Roman Percent",
-	"version": "v1.0.0",
+	"version": "v1.0.1",
 	"developer": "Beat",
 	"description": "Roman numerals in progressbar percentage.",
 	"dependencies": {
