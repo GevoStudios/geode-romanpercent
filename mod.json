@@ -1,5 +1,5 @@
 {
-	"geode": "4.9.0",
+	"geode": "4.10.0",
 	"gd": {
 		"win": "2.2074",
 		"android": "2.2074",
@@ -10,7 +10,7 @@
 	"name": "Roman Percent",
 	"version": "v1.0.0",
 	"developer": "Beat",
-	"description": "Roman numerals in progressbar percentage,",
+	"description": "Roman numerals in progressbar percentage.",
 	"dependencies": {
 		"geode.node-ids": ">=v1.20.0"
 	}, 
