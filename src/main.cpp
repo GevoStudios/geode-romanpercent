@@ -5,7 +5,7 @@ using namespace geode::prelude;
 
 std::string floatToRoman(float num) {
     std::string res;
-    int n = static_cast<int>(std::round(num));
+    int n = static_cast<int>(std::floor(num));
     if (n == 0) {
         res = "0";
         return res;
