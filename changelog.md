@@ -1,3 +1,5 @@
+# 1.0.3
+- Renamed to Mega Roman Percent.
 # 1.0.2
 - Fixed rounding problem. The Roman percentage should now be accurate to GD's percentage.
 # 1.0.1
