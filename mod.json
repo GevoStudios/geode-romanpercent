@@ -7,8 +7,8 @@
 		"ios": "2.2074"
 	},
 	"id": "beat.roman_percent",
-	"name": "Roman Percent",
-	"version": "v1.0.2",
+	"name": "Mega Roman Percent",
+	"version": "v1.0.3",
 	"developer": "Beat",
 	"description": "Roman numerals in progressbar percentage.",
 	"dependencies": {
