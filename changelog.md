@@ -1,3 +1,5 @@
+# 1.0.4
+- Reverted rename.
 # 1.0.3
 - Renamed to Mega Roman Percent.
 # 1.0.2
