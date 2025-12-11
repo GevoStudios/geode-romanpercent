@@ -1,3 +1,5 @@
+# 1.0.5
+- Fix incompatibility with QOLMod v2.2.0
 # 1.0.4
 - Reverted rename.
 # 1.0.3

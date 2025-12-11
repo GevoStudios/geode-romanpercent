@@ -28,6 +28,12 @@ std::string floatToRoman(float num) {
 }
 
 class $modify(rnPlayLayer, PlayLayer) {
+    static void onModify(auto& self) {
+        if (!self.setHookPriorityAfterPost("PlayLayer::updateProgressbar", "thesillydoggo.qolmod")) {
+            log::warn("roman percent failed to set hook priority for PlayLayer::updateProgressbar. qolmod might break roman percent.");
+        }
+    }
+    
     void updateProgressbar() {
         PlayLayer::updateProgressbar();
         if (Mod::get()->getSettingValue<bool>("enabled")) {
