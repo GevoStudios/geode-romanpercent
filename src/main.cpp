@@ -1,5 +1,6 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/PlayLayer.hpp>
+#include <bitset>
 
 using namespace geode::prelude;
 
@@ -23,9 +24,8 @@ class $modify(rnPlayLayer, PlayLayer) {
                 PlayLayer::updateProgressbar();
                 if (Mod::get()->getSettingValue<bool>("enabled")) {
                         uint8_t b = floatToByte(this->getCurrentPercent());
-                        m_percentageLabel->setString(
-                                (std::to_string(b) + "%").c_str()
-                        );
+                        std::string s = std::bitset<8>(b).to_string() + "%";
+                        m_percentageLabel->setString(s.c_str());
                 }
         }
 };
