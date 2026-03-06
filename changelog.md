@@ -1,3 +1,5 @@
+# 1.1.1
+- Added Roman Numeral Decimals
 # 1.1.0
 - Added support for Geode v5 / GD 2.2081
 # 1.0.5
