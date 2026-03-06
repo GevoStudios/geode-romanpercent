@@ -5,28 +5,46 @@ using namespace geode::prelude;
 
 std::string floatToRoman(float num) {
     std::string res;
-    int n = static_cast<int>(std::floor(num));
-    if (n == 0) {
-        res = "0";
-        return res;
-    }
-    // i thought over whether id need this or not for a while but its better to be safe ig
-    if (n < 0 || n > 100) {
-        res.clear();
-        return res;
-    }
-    int vals[] = {100, 90, 50, 40, 10, 9, 5, 4, 1};
-    std::string syms[] = {"C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+    float remaining = num;
+    if (remaining <= 0.f) { res = "N"; return res; }
+    if (remaining > 100.f) { return "C"; }
+    const int vals[] = {100, 90, 50, 40, 10, 9, 5, 4, 1};
+    const std::string syms[] = {"C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
     res.clear();
+    int whole = static_cast<int>(std::floor(remaining));
     for (int i = 0; i < 9; ++i) {
-        while (n >= vals[i]) {
-            n -= vals[i];
+        while (whole >= vals[i]) {
+            whole -= vals[i];
             res += syms[i];
         }
     }
+    float frac = remaining - static_cast<float>(whole);
+    if (Mod::get()->getSettingValue<bool>("useFractions")) {
+	    if (frac > 0.f) {
+	        int unciae = static_cast<int>(std::round(frac * 12.f));
+	        if (unciae == 12)
+	            whole += 1;
+	            res += "I";
+	            unciae = 0;
+	        }
+	        if (unciae > 0) {
+	            std::string dots = "";
+	            if (unciae == 6) {
+	                res += "S";
+	            } else if (unciae > 6) {
+	                res += "S";
+	                unciae -= 6;
+	            }
+	            for (int d = 0; d < unciae; ++d) {
+	                dots += "•";
+	            }
+	            res += dots;
+	        }
+	    }
+	}    
     return res;
 }
-
+// burgers taste good
 class $modify(rnPlayLayer, PlayLayer) {
     static void onModify(auto& self) {
         if (!self.setHookPriorityAfterPost("PlayLayer::updateProgressbar", "thesillydoggo.qolmod")) {
