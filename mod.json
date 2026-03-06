@@ -28,5 +28,10 @@
 			"name": "Enabled",
 			"default": true
 		}
+  "useFractions": {
+		"type": "bool",
+		"name": "Roman Fractions",
+		"default": false
+	 }
 	}
 }
