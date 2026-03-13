@@ -22,7 +22,7 @@ std::string floatToRoman(float num) {
     if (Mod::get()->getSettingValue<bool>("useFractions")) {
 	    if (frac > 0.f) {
 	        int unciae = static_cast<int>(std::round(frac * 12.f));
-	        if (unciae == 12)
+	        if (unciae == 12) {
 	            whole += 1;
 	            res += "I";
 	            unciae = 0;
@@ -44,7 +44,6 @@ std::string floatToRoman(float num) {
 	}    
     return res;
 }
-// burgers taste good
 class $modify(rnPlayLayer, PlayLayer) {
     static void onModify(auto& self) {
         if (!self.setHookPriorityAfterPost("PlayLayer::updateProgressbar", "thesillydoggo.qolmod")) {
